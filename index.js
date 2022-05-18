@@ -176,6 +176,4 @@ client.connect(err => {
 });
 
 
-app.listen(porcess.env.PORT || port, () => {
-    console.log(`listening to port ${port}`)
-})
+app.listen(porcess.env.PORT || port )
