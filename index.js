@@ -158,7 +158,6 @@ client.connect(err => {
                 res.send(result.deletedCount > 0)
             })
     })
-    // collection.updateOne({ uid: req.body.uid }, { $push: { allBooking: bookingInfo } }, { upsert: true })
     app.put("/addBookingInfo", (req, res) => {
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         const date = new Date().toLocaleDateString("en-US", options)
@@ -177,6 +176,6 @@ client.connect(err => {
 });
 
 
-app.listen(port, () => {
+app.listen(porcess.env.PORT || port, () => {
     console.log(`listening to port ${port}`)
 })
