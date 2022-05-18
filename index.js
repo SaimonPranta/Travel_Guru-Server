@@ -18,7 +18,7 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
 
-const port = process.env.PORT || 7000
+const port = process.env.PORT || 7000 ;
 const uri = `mongodb+srv://saimon:${process.env.MONGODB_PASSWORD}@cluster0.0la8l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 app.use(cors())
