@@ -72,7 +72,9 @@ client.connect(err => {
     app.get("/testing", (req, res) => {
         roomCollection.find({ })
         .toArray((err, document) => {
-            res.send(document[0])
+            if (document.length) {
+                res.send(document[0])
+            }
         })
     })
 
