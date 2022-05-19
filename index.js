@@ -19,7 +19,7 @@ admin.initializeApp({
 });
 
 const port = process.env.PORT || 7000 ;
-const uri = `mongodb+srv://saimon:${process.env.MONGODB_PASSWORD}@cluster0.0la8l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://saimon:XZXSfMuPrt5CGw8z@cluster0.0la8l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 app.use(cors())
 app.use(bodyParser.json())
@@ -32,8 +32,8 @@ app.get("/", (req, res) => {
 
 
 client.connect(err => {
-    const collection = client.db(`${process.env.MONGODB_USER_DATABASE_NAME}`).collection(`${process.env.MONGODB_USER_DATABASE_COLLECTIO_NAME }`);
-    const roomCollection = client.db(`${process.env.MONGODB_ROOMS_DATABASE_NAME}`).collection(`${process.env.MONGODB_ROOMS_BATABASE_COLLECTION}`);
+    const collection = client.db(`users_collection`).collection(`users_info`);
+    const roomCollection = client.db(`rooms_collection`).collection(`rooms_info`);
 
     app.post("/addUser", (req, res) => {
         collection.find({ uid: req.body.user.uid })
