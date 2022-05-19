@@ -107,7 +107,7 @@ client.connect(err => {
     app.get("/getRoomsInfo", (req, res) => {
         roomCollection.find({})
             .toArray((err, document) => {
-                res.send(document)
+                res.send("hello world")
             })
     })
 
