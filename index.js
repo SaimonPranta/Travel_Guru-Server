@@ -18,7 +18,7 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
 
-const port = process.env.PORT || 8000 ;
+const port = process.env.PORT || 7000 ;
 const uri = `mongodb+srv://saimon:${process.env.MONGODB_PASSWORD}@cluster0.0la8l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 app.use(cors())
@@ -28,6 +28,9 @@ app.use(fileUpload());
 
 app.get("/", (req, res) => {
     res.send("we are online now")
+})
+app.get("/testing", (req, res) => {
+    res.send("now we are testing page")
 })
 
 client.connect(err => {
