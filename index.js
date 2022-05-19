@@ -29,9 +29,7 @@ app.use(fileUpload());
 app.get("/", (req, res) => {
     res.send("we are online now")
 })
-app.get("/testing", (req, res) => {
-    res.send("now we are testing page")
-})
+
 
 client.connect(err => {
     const collection = client.db(`${process.env.MONGODB_USER_DATABASE_NAME}`).collection(`${process.env.MONGODB_USER_DATABASE_COLLECTIO_NAME }`);
@@ -69,6 +67,14 @@ client.connect(err => {
                 });
         }
 
+    })
+
+    app.get("/testing", (req, res) => {
+        roomCollection.find({ })
+        .toArray((err, document) => {
+            res.send(document[0])
+        })
+    
     })
 
     app.post("/addRooms", (req, res) => {
