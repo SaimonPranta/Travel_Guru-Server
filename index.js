@@ -74,7 +74,6 @@ client.connect(err => {
         .toArray((err, document) => {
             res.send(document[0])
         })
-    
     })
 
     app.post("/addRooms", (req, res) => {
