@@ -69,15 +69,6 @@ client.connect(err => {
 
     })
 
-    app.get("/testing", (req, res) => {
-        roomCollection.find({ })
-        .toArray((err, document) => {
-            if (document.length) {
-                res.send(document[0])
-            }
-        })
-    })
-
     app.post("/addRooms", (req, res) => {
         const image = req.files.image
         const roomInfo = {
