@@ -8,7 +8,8 @@
     "express-uploadfiles": "^1.0.4",
     "firebase-admin": "^10.2.0",
     "fs-extra": "^10.1.0",
-    "mongodb": "^4.5.0"
+    "mongodb": "^4.5.0",
+    "nodemon": "^2.0.16"
   },
   "name": "travel-guru-serverside",
   "version": "1.0.0",
