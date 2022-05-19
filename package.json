@@ -8,14 +8,15 @@
     "express-uploadfiles": "^1.0.4",
     "firebase-admin": "^10.2.0",
     "fs-extra": "^10.1.0",
-    "mongodb": "^4.5.0",
-    "nodemon": "^2.0.16"
+    "heroku": "^7.60.2",
+    "mongodb": "^4.5.0"
   },
   "name": "travel-guru-serverside",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
